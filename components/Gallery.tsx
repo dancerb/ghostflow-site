@@ -26,12 +26,12 @@ const slides: Slide[] = [
   { src: "/BEFORE_CASTING IMPERFECTIONS.jpg", tag: "BEFORE",      label: "Casting Imperfections",  group: "Casting" },
   { src: "/AFTER_CASTING IMPERFECTIONS.jpg",  tag: "AFTER",       label: "Casting Imperfections",  group: "Casting" },
   // Cylinder Heads
-  { src: "/BEFORE_HEADS.jpg",                 tag: "BEFORE",      label: "Cylinder Heads",         group: "Cylinder Heads" },
+  { src: "/BEFORE_HEADS.jpeg",                tag: "BEFORE",      label: "Cylinder Heads",         group: "Cylinder Heads" },
   { src: "/FINISHED_HEADS.jpg",               tag: "FINISHED",    label: "Cylinder Heads",         group: "Cylinder Heads" },
   // GC3.8 Head
   { src: "/BEFORE_GC3.8_HEAD.jpg",            tag: "BEFORE",      label: "GC3.8 Head",             group: "GC3.8 Head" },
   { src: "/INPROGRESS_GC3.8_HEAD.jpg",        tag: "IN PROGRESS", label: "GC3.8 Head",             group: "GC3.8 Head" },
-  { src: "/INPROGRESS_GC3.8_HEAD_.jpg",       tag: "IN PROGRESS", label: "GC3.8 Head (detail)",    group: "GC3.8 Head" },
+  { src: "/INPROGRESS_GC3.8_HEAD_.jpeg",      tag: "IN PROGRESS", label: "GC3.8 Head (detail)",    group: "GC3.8 Head" },
   // Porting
   { src: "/BEFORE_PORTING.jpg",               tag: "BEFORE",      label: "Porting",                group: "Porting" },
   { src: "/INPROGRESS_PORTING.jpg",           tag: "IN PROGRESS", label: "Porting",                group: "Porting" },
@@ -123,6 +123,17 @@ export default function Gallery() {
                 sizes="(max-width: 768px) 100vw, 900px"
                 unoptimized
                 priority
+              />
+            </div>
+
+            {/* Watermark overlay — bottom-right */}
+            <div className="absolute bottom-16 right-4 w-[18%] aspect-square pointer-events-none select-none z-10 opacity-40">
+              <Image
+                src="/GFwatermark.png"
+                alt=""
+                fill
+                className="object-contain"
+                unoptimized
               />
             </div>
 
