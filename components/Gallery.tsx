@@ -127,7 +127,7 @@ export default function Gallery() {
             </div>
 
             {/* Watermark overlay — bottom-right */}
-            <div className="absolute bottom-16 right-4 w-[18%] aspect-square pointer-events-none select-none z-10 opacity-40">
+            <div className="absolute bottom-2 right-2 w-[28%] aspect-square pointer-events-none select-none z-10 opacity-50">
               <Image
                 src="/GFwatermark.png"
                 alt=""
