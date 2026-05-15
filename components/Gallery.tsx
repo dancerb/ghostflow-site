@@ -109,7 +109,18 @@ export default function Gallery() {
         {/* Carousel */}
         <div className="reveal">
           {/* Main image */}
-          <div className="relative w-full aspect-[4/3] bg-zinc-900 border border-zinc-800 overflow-hidden group">
+          <div
+            className="relative w-full aspect-[4/3] bg-zinc-900 border border-zinc-800 overflow-hidden group"
+            onContextMenu={(e) => e.preventDefault()}
+          >
+            {/* Transparent protection overlay — blocks right-click, drag, long-press on the image */}
+            <div
+              className="absolute inset-0 z-20"
+              onContextMenu={(e) => e.preventDefault()}
+              onDragStart={(e) => e.preventDefault()}
+              style={{ WebkitUserSelect: "none", userSelect: "none", WebkitTouchCallout: "none" } as React.CSSProperties}
+            />
+
             <div
               className="absolute inset-0 transition-opacity duration-300"
               style={{ opacity: animating ? 0 : 1, transform: animating ? `translateX(${direction === "right" ? "30px" : "-30px"})` : "translateX(0)", transition: "opacity 0.3s ease, transform 0.3s ease" }}
@@ -119,10 +130,12 @@ export default function Gallery() {
                 src={slide.src}
                 alt={`${slide.tag} — ${slide.label}`}
                 fill
-                className="object-cover"
+                className="object-cover pointer-events-none"
                 sizes="(max-width: 768px) 100vw, 900px"
                 unoptimized
                 priority
+                draggable={false}
+                onDragStart={(e) => e.preventDefault()}
               />
             </div>
 
@@ -195,6 +208,7 @@ export default function Gallery() {
               <button
                 key={i}
                 onClick={() => goTo(i, i > current ? "right" : "left")}
+                onContextMenu={(e) => e.preventDefault()}
                 className={`relative flex-shrink-0 w-16 h-16 overflow-hidden border-2 transition-all duration-200 ${
                   i === current ? "border-brand-red" : "border-zinc-800 hover:border-zinc-500"
                 }`}
@@ -203,9 +217,10 @@ export default function Gallery() {
                   src={s.src}
                   alt={s.label}
                   fill
-                  className="object-cover"
+                  className="object-cover pointer-events-none"
                   sizes="64px"
                   unoptimized
+                  draggable={false}
                 />
               </button>
             ))}
