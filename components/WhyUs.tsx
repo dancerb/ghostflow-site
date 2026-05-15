@@ -4,21 +4,21 @@ import { useReveal } from "@/hooks/useReveal";
 const pillars = [
   {
     number: "01",
-    title: "Built on Passion",
-    desc: "Ghost Flow started with a grinder, a vision, and a refusal to cut corners. Every port is personal — this is one craftsman's obsession with making air move the way it was meant to.",
-    stat: "Driven by Craft",
+    title: "Artisan-Level Precision",
+    desc: "Every port is shaped by hand with a craftsman's eye — not rushed, not templated. We work until the flow is right, not until the clock runs out. The finish you get reflects that standard.",
+    stat: "Hand-Worked to Spec",
   },
   {
     number: "02",
-    title: "Solo. Every Cut.",
-    desc: "No team. No outsourcing. Every single piece that comes through this shop gets the same set of hands from drop-off to pick-up. You know exactly who worked your parts.",
-    stat: "One Set of Hands",
+    title: "You Talk to Who Works Your Parts",
+    desc: "No project managers. No middlemen. The person quoting your job is the same person running the die grinder. You get direct answers, honest timelines, and zero guesswork about what's happening to your engine.",
+    stat: "Direct Communication",
   },
   {
     number: "03",
-    title: "Your Build Gets Full Attention",
-    desc: "Just starting out means every job builds the reputation. There's no assembly-line mentality here — your engine gets treated like it's the only one in the shop. Because it is.",
-    stat: "Personal Attention",
+    title: "Flow First. Always.",
+    desc: "Every decision — shape, blend, surface finish — is made with airflow as the priority. We don't port for looks. We port for velocity, volume, and results you'll feel every time you get on it.",
+    stat: "Performance Driven",
   },
 ];
 
@@ -44,14 +44,14 @@ export default function WhyUs() {
         {/* Header */}
         <div className="reveal text-center mb-16">
           <p className="font-heading text-brand-red text-sm tracking-[0.4em] uppercase mb-3">
-            The Story
+            The Standard
           </p>
           <h2 className="font-heading text-5xl md:text-6xl font-bold chrome-text mb-4">
             WHY GHOST FLOW
           </h2>
           <div className="section-divider" />
           <p className="font-body text-brand-chrome max-w-xl mx-auto text-base leading-relaxed">
-            Solo operation. Fresh start. No shortcuts.
+            Precision work. Direct communication. Performance that speaks for itself.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function WhyUs() {
         {/* Bottom quote */}
         <div className="reveal mt-16 text-center">
           <blockquote className="font-heading text-2xl md:text-3xl font-medium text-zinc-300 italic max-w-3xl mx-auto">
-            &ldquo;Every job is a chance to prove what Ghost Flow is made of.&rdquo;
+            &ldquo;If the air doesn&apos;t move better than it did before, the job isn&apos;t done.&rdquo;
           </blockquote>
         </div>
       </div>
