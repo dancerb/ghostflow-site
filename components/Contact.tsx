@@ -1,15 +1,17 @@
 "use client";
 import { useReveal } from "@/hooks/useReveal";
 import { useState, FormEvent } from "react";
+import Disclaimer from "@/components/Disclaimer";
 
 const services = [
   "Select a Service",
   "Cylinder Head Porting",
-  "Intake Manifold Porting",
+  "Intake Manifold Port Matching",
   "Exhaust Porting",
-  "Bowl Blending",
-  "Valve Job",
-  "Mirror Polishing",
+  "Plenum Cleanup",
+  "Runner Reshaping",
+  "Throttle Body Transition Smoothing",
+  "Gasket Matching",
   "Full Build Package",
   "Other / Multiple Services",
 ];
@@ -17,9 +19,11 @@ const services = [
 export default function Contact() {
   const ref = useReveal();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [disclaimerAgreed, setDisclaimerAgreed] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!disclaimerAgreed) return;
     setStatus("sending");
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -43,7 +47,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-black py-24 px-6 relative">
-      {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-brand-red opacity-40" />
 
       <div ref={ref} className="max-w-3xl mx-auto">
@@ -62,10 +65,7 @@ export default function Contact() {
         </div>
 
         {/* Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="reveal flex flex-col gap-5"
-        >
+        <form onSubmit={handleSubmit} className="reveal flex flex-col gap-5">
           {/* Name + Email */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div className="flex flex-col gap-2">
@@ -153,17 +153,22 @@ export default function Contact() {
             />
           </div>
 
+          {/* Embedded disclaimer acknowledgment */}
+          <Disclaimer embedded onAgreementChange={setDisclaimerAgreed} />
+
           {/* Submit */}
           <button
             type="submit"
-            disabled={status === "sending" || status === "sent"}
-            className="font-heading text-lg tracking-[0.25em] uppercase px-10 py-4 bg-brand-red text-white hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-[0_0_24px_rgba(204,0,0,0.5)] active:scale-95 mt-2"
+            disabled={!disclaimerAgreed || status === "sending" || status === "sent"}
+            className="font-heading text-lg tracking-[0.25em] uppercase px-10 py-4 bg-brand-red text-white hover:bg-red-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-[0_0_24px_rgba(204,0,0,0.5)] active:scale-95 mt-2"
           >
             {status === "sending"
               ? "Sending..."
               : status === "sent"
-              ? "Message Sent ✓"
-              : "Submit Quote Request"}
+              ? "Request Sent ✓"
+              : disclaimerAgreed
+              ? "Submit Quote Request"
+              : "Acknowledge Disclaimer to Submit"}
           </button>
 
           {status === "error" && (

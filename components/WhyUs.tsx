@@ -4,21 +4,21 @@ import { useReveal } from "@/hooks/useReveal";
 const pillars = [
   {
     number: "01",
-    title: "Race-Proven Results",
-    desc: "Our work has crossed finish lines at every level — drag, road race, and circle track. The dyno numbers back it up. We don't guess; we test.",
-    stat: "Power Verified",
+    title: "Built on Passion",
+    desc: "Ghost Flow started with a grinder, a vision, and a refusal to cut corners. Every port is personal — this is one craftsman's obsession with making air move the way it was meant to.",
+    stat: "Driven by Craft",
   },
   {
     number: "02",
-    title: "Precision CNC + Hand Work",
-    desc: "We start with CNC precision and finish by hand. Every port is shaped, blended, and inspected to match the flow map — not just eyeballed.",
-    stat: "CNC + Hand Finish",
+    title: "Solo. Every Cut.",
+    desc: "No team. No outsourcing. Every single piece that comes through this shop gets the same set of hands from drop-off to pick-up. You know exactly who worked your parts.",
+    stat: "One Set of Hands",
   },
   {
     number: "03",
-    title: "Fast Turnaround",
-    desc: "We know downtime costs you. Most cylinder head jobs ship in 5–7 business days. Rush options available. You'll always know your status.",
-    stat: "5–7 Day Standard",
+    title: "Your Build Gets Full Attention",
+    desc: "Just starting out means every job builds the reputation. There's no assembly-line mentality here — your engine gets treated like it's the only one in the shop. Because it is.",
+    stat: "Personal Attention",
   },
 ];
 
@@ -44,12 +44,15 @@ export default function WhyUs() {
         {/* Header */}
         <div className="reveal text-center mb-16">
           <p className="font-heading text-brand-red text-sm tracking-[0.4em] uppercase mb-3">
-            Why Choose Us
+            The Story
           </p>
           <h2 className="font-heading text-5xl md:text-6xl font-bold chrome-text mb-4">
             WHY GHOST FLOW
           </h2>
           <div className="section-divider" />
+          <p className="font-body text-brand-chrome max-w-xl mx-auto text-base leading-relaxed">
+            Solo operation. Fresh start. No shortcuts.
+          </p>
         </div>
 
         {/* Three columns */}
@@ -80,7 +83,7 @@ export default function WhyUs() {
         {/* Bottom quote */}
         <div className="reveal mt-16 text-center">
           <blockquote className="font-heading text-2xl md:text-3xl font-medium text-zinc-300 italic max-w-3xl mx-auto">
-            &ldquo;We don&apos;t just move metal — we move air.&rdquo;
+            &ldquo;Every job is a chance to prove what Ghost Flow is made of.&rdquo;
           </blockquote>
         </div>
       </div>
