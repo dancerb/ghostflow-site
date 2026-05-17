@@ -67,8 +67,8 @@ export default function Services() {
           </h2>
           <div className="section-divider" />
           <p className="font-body text-brand-chrome max-w-xl mx-auto text-base leading-relaxed">
-            Every piece that leaves our shop has been worked by hand and verified
-            for flow. No shortcuts. No exceptions.
+            Every piece that leaves our shop has been worked by hand.
+            No shortcuts. No exceptions.
           </p>
         </div>
 
