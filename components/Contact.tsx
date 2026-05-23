@@ -23,20 +23,30 @@ export default function Contact() {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!disclaimerAgreed) return;
+    if (!disclaimerAgreed || status === "sending" || status === "sent") return;
     setStatus("sending");
     const form = e.currentTarget;
     const data = new FormData(form);
 
+    const payload = {
+      name:    (data.get("name")    as string) ?? "",
+      email:   (data.get("email")   as string) ?? "",
+      phone:   (data.get("phone")   as string) ?? "",
+      service: (data.get("service") as string) ?? "",
+      vehicle: (data.get("vehicle") as string) ?? "",
+      message: (data.get("message") as string) ?? "",
+    };
+
     try {
-      const res = await fetch("https://formspree.io/f/xpwzgekb", {
+      const res = await fetch("/api/quote", {
         method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
+        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/json" },
       });
       if (res.ok) {
         setStatus("sent");
         form.reset();
+        setDisclaimerAgreed(false);
       } else {
         setStatus("error");
       }
