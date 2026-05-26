@@ -5,7 +5,7 @@ export async function POST(req: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await req.json();
-    const { name, email, phone, service, vehicle, message } = body;
+    const { name, email, phone, service, vehicle, message, delivery } = body;
 
     // Server-side validation
     if (!name || !email || !service || !vehicle) {
@@ -55,6 +55,10 @@ export async function POST(req: Request) {
             <tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #222; color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Vehicle / Engine</td>
               <td style="padding: 10px 0; border-bottom: 1px solid #222; color: #e8e8e8; font-size: 14px;">${escapeHtml(vehicle)}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #222; color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Delivery</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #222; color: #e8e8e8; font-size: 14px; font-weight: bold;">${escapeHtml(delivery || "—")}</td>
             </tr>
             <tr>
               <td style="padding: 10px 0; color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; vertical-align: top;">Message</td>
