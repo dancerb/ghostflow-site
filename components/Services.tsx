@@ -5,11 +5,32 @@ const services = [
   {
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+    title: "Upper Intake Manifold",
+    subtitle: "Upper Plenum",
+    desc: "Plenum volume cleanup, casting flash removal, and transition blending. Opens up the upper chamber for improved charge velocity and more even distribution into the lower manifold.",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+      </svg>
+    ),
+    title: "Lower Intake Manifold",
+    subtitle: "Lower Plenum",
+    desc: "Runner reshaping, port matching to the head gasket, and bowl blending. Corrects factory casting imperfections and optimizes charge distribution across all cylinders.",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10" stroke="currentColor" strokeWidth={1.5}>
         <circle cx="12" cy="12" r="4" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
       </svg>
     ),
-    title: "Throttle Body",
+    title: "Throttle Body Assembly",
+    subtitle: "",
     desc: "Port matching and transition smoothing on the throttle body bore. Removes casting restrictions and blends the inlet for cleaner, unrestricted airflow into the intake.",
   },
   {
@@ -18,17 +39,9 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18" />
       </svg>
     ),
-    title: "Cylinder Heads",
+    title: "Cylinder Head",
+    subtitle: "",
     desc: "Full port and polish of intake and exhaust ports, bowl blending, and gasket matching. Maximizes airflow velocity and volume where it matters most — at the valve.",
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    title: "Intake Manifolds",
-    desc: "Runner reshaping, plenum cleanup, and port matching to the gasket. Corrects factory casting imperfections and optimizes charge distribution across all cylinders.",
   },
   {
     icon: (
@@ -37,7 +50,8 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
       </svg>
     ),
-    title: "Exhaust Manifolds",
+    title: "Exhaust Manifold",
+    subtitle: "Header Assembly",
     desc: "Port matching, blending, and smoothing of exhaust manifold entries. Reduces backpressure, improves scavenging, and eliminates the hot spots caused by turbulent exhaust flow.",
   },
   {
@@ -46,8 +60,20 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
       </svg>
     ),
-    title: "Oil Pick Up",
-    desc: "Cleaning, deburring, and radiusing of oil pick up tubes and passages. Ensures unrestricted oil flow to the pump — critical for high-RPM builds where oil starvation kills engines.",
+    title: "Engine Oil Pickup Tube",
+    subtitle: "",
+    desc: "Cleaning, deburring, and radiusing of oil pickup tubes and passages. Ensures unrestricted oil flow to the pump — critical for high-RPM builds where oil starvation kills engines.",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+    title: "Additional Components",
+    subtitle: "Miscellaneous Parts",
+    desc: "Have a part that doesn't fit the list? Bring it in. If it has a port, bore, or passage that restricts flow, we can work it. Reach out with details and we'll let you know what's possible.",
   },
 ];
 
@@ -82,9 +108,16 @@ export default function Services() {
               <div className="text-brand-chrome group-hover:text-white transition-colors duration-300">
                 {s.icon}
               </div>
-              <h3 className="font-heading text-xl font-semibold text-white tracking-wide">
-                {s.title}
-              </h3>
+              <div>
+                <h3 className="font-heading text-xl font-semibold text-white tracking-wide">
+                  {s.title}
+                </h3>
+                {s.subtitle && (
+                  <p className="font-heading text-xs tracking-[0.2em] uppercase text-zinc-500 mt-1">
+                    {s.subtitle}
+                  </p>
+                )}
+              </div>
               <div className="w-8 h-0.5 bg-brand-red" />
               <p className="font-body text-sm text-zinc-400 leading-relaxed">
                 {s.desc}

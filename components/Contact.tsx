@@ -5,15 +5,13 @@ import Disclaimer from "@/components/Disclaimer";
 
 const services = [
   "Select a Service",
-  "Cylinder Head Porting",
-  "Intake Manifold Port Matching",
-  "Exhaust Porting",
-  "Plenum Cleanup",
-  "Runner Reshaping",
-  "Throttle Body Transition Smoothing",
-  "Gasket Matching",
-  "Full Build Package",
-  "Other / Multiple Services",
+  "Upper Intake Manifold (Upper Plenum)",
+  "Lower Intake Manifold (Lower Plenum)",
+  "Throttle Body Assembly",
+  "Cylinder Head",
+  "Exhaust Manifold / Header Assembly",
+  "Engine Oil Pickup Tube",
+  "Additional Components / Miscellaneous Parts",
 ];
 
 export default function Contact() {
